@@ -46,7 +46,7 @@ namespace GuiEncryption
                 }
                 else
                 {
-                    Directory.Delete(pathFolder);
+                   // Directory.Delete(pathFolder);
                     System.IO.Compression.ZipFile.ExtractToDirectory(pathFolder, pathZip);
                     return 1;
                 }

@@ -96,7 +96,7 @@ namespace GuiEncryption
                     try
                     {
                         File.Delete(pathZipped);
-                        res =  zipped.ZipFolder(pathFolder, pathZipped);
+                        res = zipped.ZipFolder(pathFolder, pathZipped);
                         if (res == 0) { MessageBox.Show("error zipping folder", "error"); };
                     }
                     catch (Exception ex)
@@ -110,14 +110,14 @@ namespace GuiEncryption
                     MessageBox.Show("Ok abording");
                     return;
                 }
-        }
-        else
-        {
+            }
+            else
+            {
                 try
                 {
                     Console.WriteLine("file does no exist");
                     res = zipped.ZipFolder(pathFolder, pathZipped);
-                    if(res == 0) { MessageBox.Show("error zipping folder", "error"); };
+                    if (res == 0) { MessageBox.Show("error zipping folder", "error"); };
                 }
                 catch (Exception ex)
                 {
@@ -131,7 +131,7 @@ namespace GuiEncryption
         static void UnzipData(string pathfile, string pathOut)
         {
             manage_zip ziped = new manage_zip();
-            ziped.UnzipFolder(pathOut, pathfile);
+            ziped.UnzipFile(pathOut, pathfile);
         }
         static void AESEncryptData(string password, string pathFile)
         {
@@ -192,13 +192,16 @@ namespace GuiEncryption
             var aesKey = GenerateAleaKey();
             AESEncryptData(aesKey, zippedFile);
             RsaEncryptExtKey(aesKey, pathToRSAPubKey, Path.Combine(pathToOut, nameDest + "_cypheredAeskey.txt"));
-            //File.Delete(zippedFile);
+            File.Delete(zippedFile);
             MessageBox.Show("finito", "Yeah");
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            manage_rsa rsa = new manage_rsa();
+            
+        
+            
+            //manage_rsa rsa = new manage_rsa();
             string pathToCypherAesKey = GetFile("Get Cypher AES KEY", "txt", " TXT File (*.txt) | *.txt  ");
             if (pathToCypherAesKey == null) { return; }
             string pathToPrivKey = GetFile("Get Private Key file", "xml", "XML file (*.xml) | *.xml  ");
@@ -208,19 +211,24 @@ namespace GuiEncryption
             string pathToOut = GetDir("Where do you want to extract data ?");
             if (pathToOut == null) { return; }
 
-            string DecypheredPass = rsa.DecypherRSAKey(pathToPrivKey, pathToCypherAesKey);
+
+            
+
+            string DecypheredPass = rs.DecypherRSAKey(pathToPrivKey, pathToCypherAesKey);
             var cle = RemoveSpecialCharacters(DecypheredPass);
-
             string pathToDecryptedFile = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathFile));
-            Console.WriteLine(pathToDecryptedFile);
+            string pathToOutFolder = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathToDecryptedFile));
+            Directory.CreateDirectory(pathToOutFolder);
+  
             AESDecryptData(pathFile, pathToDecryptedFile, cle); // on le déchiffre la ou on l'a trouvé
-
             string pathNewDir = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathToDecryptedFile));
+            UnzipData(pathToDecryptedFile, pathNewDir);  //on dezip
             Console.WriteLine(pathToDecryptedFile);
-
-            Directory.CreateDirectory(pathNewDir);
-          //  UnzipData(pathToDecryptedFile, pathNewDir);  //on dezip
+            File.Delete(pathToDecryptedFile);
             MessageBox.Show("finito","Yeah");
+
         }
+
+
     }
 }
