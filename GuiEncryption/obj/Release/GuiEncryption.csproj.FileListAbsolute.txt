@@ -1,0 +1,14 @@
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Release\GuiEncryption.exe.config
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Release\GuiEncryption.exe.manifest
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Release\GuiEncryption.application
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Release\GuiEncryption.exe
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Release\GuiEncryption.pdb
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.csprojAssemblyReference.cache
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.Form1.resources
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.Properties.Resources.resources
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.csproj.GenerateResource.cache
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.csproj.CoreCompileInputs.cache
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.exe.manifest
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.application
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.exe
+C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Release\GuiEncryption.pdb
