@@ -1,15 +1,5 @@
 # AES128WindowsFolderEncryption
----
 
-title: " Windows Encryption Gui tool "
-
-categories:
-  - Tool
-tags:
-  - Windows
-  - Tool
-
----
 
 # A little GUI Encryption Tool for Windows 
 
@@ -22,11 +12,6 @@ As a forensic analyst, u sometime have to work with sensitive data and its bette
 
 The tool is still in BETA and will crash if you don't provide it the right files it ask.
 
-
-
-Here it is :[GUIEncryptionTOOL](https://github.com/Xbloro/AES128WindowsFolderEncryption "here"). 
-
-![welcome](/assets/images/GUIEncryption/welcome.png?raw=true "welcome")
 
 A compiled version is available one the release section.
 
@@ -62,10 +47,6 @@ While encrypting the tool create 2 files :
 
 - an txt file containing the cyphered AES key (name is > nameofthefolder_CypheredRSAKey.txt )
 - an encrypted file with .aes extension (name is > nameofthefolde.zip.aes )
-
-
-![Keys](/assets/images/GUIEncryption/RSAkeypair.png?raw=true "keys")
-![AESFiles](/assets/images/GUIEncryption/aesfiles.png?raw=true "aesfiles")
 
 
 While decrypting it create a folder with the same name as the one chosen to be encrypted.
