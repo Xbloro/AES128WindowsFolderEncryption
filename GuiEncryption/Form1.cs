@@ -25,8 +25,8 @@ namespace GuiEncryption
             using (var ofd = new OpenFileDialog())
             {
                 ofd.Title = title;
-                // ofd.Filter = filter;
-                // ofd.DefaultExt = ext;
+                ofd.Filter = filter;
+                ofd.DefaultExt = ext;
                 DialogResult result = ofd.ShowDialog();
 
                 if (result == DialogResult.OK && !String.IsNullOrWhiteSpace(ofd.FileName))
@@ -179,7 +179,7 @@ namespace GuiEncryption
         {
             string dirToEncrypt = GetDir("Select folder you want to encrypt");
             if (dirToEncrypt == null) { return; }
-            string pathToRSAPubKey = GetFile("Get Public Key file", "xml", "XML file (*.xml) | *.xml  ");
+            string pathToRSAPubKey = GetFile("Get Public Key file", "xml", "XML file|*.xml");
             if (pathToRSAPubKey == null) { return; }
             string pathToOut = GetDir("Select folder you want to save the encrypted File");
             if (pathToOut == null) { return; }
@@ -202,11 +202,11 @@ namespace GuiEncryption
         
             
             //manage_rsa rsa = new manage_rsa();
-            string pathToCypherAesKey = GetFile("Get Cypher AES KEY", "txt", " TXT File (*.txt) | *.txt  ");
+            string pathToCypherAesKey = GetFile("Get Cypher AES KEY", "txt", "TXT file|*.txt");
             if (pathToCypherAesKey == null) { return; }
-            string pathToPrivKey = GetFile("Get Private Key file", "xml", "XML file (*.xml) | *.xml  ");
+            string pathToPrivKey = GetFile("Get Private Key file", "xml", "XML file|*.xml");
             if (pathToPrivKey == null) { return; }
-            string pathFile = GetFile("Get AES file", "aes", "AES files (*.aes) | *.aes "); // on recup le fichier aes
+            string pathFile = GetFile("Get AES file", "aes", "AES files|*.aes"); // on recup le fichier aes
             if (pathFile == null) { return; }
             string pathToOut = GetDir("Where do you want to extract data ?");
             if (pathToOut == null) { return; }
