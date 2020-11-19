@@ -86,7 +86,7 @@ namespace GuiEncryption
         }
         static void ZipFolder(string pathFolder, string pathZipped)
         {
-            manage_zip zipped = new manage_zip();
+            Manage_Zip zipped = new Manage_Zip();
             int res;
             if (File.Exists(pathZipped))
             {
@@ -97,7 +97,7 @@ namespace GuiEncryption
                     {
                         File.Delete(pathZipped);
                         res = zipped.ZipFolder(pathFolder, pathZipped);
-                        if (res == 0) { MessageBox.Show("error zipping folder", "error"); };
+                        if (res == 1) { MessageBox.Show("error zipping folder", "error"); };
                     }
                     catch (Exception ex)
                     {
@@ -130,8 +130,8 @@ namespace GuiEncryption
         }
         static void UnzipData(string pathfile, string pathOut)
         {
-            manage_zip ziped = new manage_zip();
-            ziped.UnzipFile(pathOut, pathfile);
+            Manage_Zip zipped  = new Manage_Zip();
+            zipped.UnzipFolder(pathfile,pathOut);
         }
         static void AESEncryptData(string password, string pathFile)
         {
@@ -206,25 +206,26 @@ namespace GuiEncryption
             if (pathToCypherAesKey == null) { return; }
             string pathToPrivKey = GetFile("Get Private Key file", "xml", "XML file|*.xml");
             if (pathToPrivKey == null) { return; }
-            string pathFile = GetFile("Get AES file", "aes", "AES files|*.aes"); // on recup le fichier aes
-            if (pathFile == null) { return; }
+            string pathAesFile = GetFile("Get AES file", "aes", "AES files|*.aes"); // on recup le fichier aes
+            if (pathAesFile == null) { return; }
             string pathToOut = GetDir("Where do you want to extract data ?");
             if (pathToOut == null) { return; }
 
 
             
-
+            //get AES keys
             string DecypheredPass = rs.DecypherRSAKey(pathToPrivKey, pathToCypherAesKey);
             var cle = RemoveSpecialCharacters(DecypheredPass);
-            string pathToDecryptedFile = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathFile));
-            string pathToOutFolder = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathToDecryptedFile));
-            Directory.CreateDirectory(pathToOutFolder);
-  
-            AESDecryptData(pathFile, pathToDecryptedFile, cle); // on le déchiffre la ou on l'a trouvé
-            string pathNewDir = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathToDecryptedFile));
-            UnzipData(pathToDecryptedFile, pathNewDir);  //on dezip
-            Console.WriteLine(pathToDecryptedFile);
-            File.Delete(pathToDecryptedFile);
+
+
+            string pathToZippedFile = Path.Combine(pathToOut, Path.GetFileNameWithoutExtension(pathAesFile)); 
+ 
+            AESDecryptData(pathAesFile, pathToZippedFile, cle); // on le déchiffre la ou on l'a trouvé
+
+            UnzipData(pathToZippedFile, pathToOut);  //on dezip
+    
+            Console.WriteLine(pathToZippedFile);
+            File.Delete(pathToZippedFile);
             MessageBox.Show("finito","Yeah");
 
         }

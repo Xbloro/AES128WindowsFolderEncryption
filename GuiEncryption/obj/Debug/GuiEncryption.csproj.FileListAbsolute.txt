@@ -8,3 +8,13 @@ C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Debug\GuiEncrypti
 C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\bin\Debug\GuiEncryption.pdb
 C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Debug\GuiEncryption.exe
 C:\Users\Hugo\Documents\GitHub\GuiEncryption\GuiEncryption\obj\Debug\GuiEncryption.pdb
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.csprojAssemblyReference.cache
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.Form1.resources
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.Properties.Resources.resources
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.csproj.GenerateResource.cache
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.csproj.CoreCompileInputs.cache
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.exe
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\obj\Debug\GuiEncryption.pdb
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\bin\Debug\GuiEncryption.exe.config
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\bin\Debug\GuiEncryption.exe
+C:\Users\Hugo\Documents\GitHub\AES128WindowsFolderEncryption\GuiEncryption\bin\Debug\GuiEncryption.pdb
